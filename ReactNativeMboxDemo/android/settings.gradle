@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeMboxDemo'
+
+include ':app'

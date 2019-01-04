@@ -1,0 +1,2 @@
+export const TYPE_INCREASE = "TYPE_INCREASE";
+export const TYPE_DECREASE = "TYPE_DECREASE";

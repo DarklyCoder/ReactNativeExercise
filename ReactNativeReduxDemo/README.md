@@ -182,11 +182,16 @@
         };
     };
 
+    //使用 connect 导出组件
     export default connect(
         mapStateToProps,
         mapActionToProps
     )(CountComponent);
 
    ```
+
+4. 参考
+
+- [Redux GitHub](https://github.com/reduxjs/redux)
 
 [redux_folder_structure]: ../imgs/redux_folder_structure.png

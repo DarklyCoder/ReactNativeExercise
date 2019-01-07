@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
 import { connect } from "react-redux";
 import * as CountAction from "../redux/actions/countAction";
@@ -8,13 +8,13 @@ class CountComponent extends PureComponent {
   render() {
     return (
       <View style={styles.countContainer}>
-        <TouchableWithoutFeedback onPress={this._decrease}>
+        <TouchableHighlight underlayColor="#FFF" onPress={this._decrease}>
           <Text style={styles.btn}>-</Text>
-        </TouchableWithoutFeedback>
+        </TouchableHighlight>
         <Text style={styles.count}>{this.props.count}</Text>
-        <TouchableWithoutFeedback onPress={this._increase}>
+        <TouchableHighlight underlayColor="#FFF" onPress={this._increase}>
           <Text style={styles.btn}>+</Text>
-        </TouchableWithoutFeedback>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -30,20 +30,27 @@ class CountComponent extends PureComponent {
 
 const styles = StyleSheet.create({
   countContainer: {
-    flexDirection: "row"
+    height: 50,
+    width: 200,
+    flexDirection: "row",
+    backgroundColor: "#F3F3F3"
   },
   btn: {
     width: 50,
     height: 50,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#CCC",
     color: "#333",
-    fontSize: 10
+    fontSize: 16,
+    textAlign: "center",
+    textAlignVertical: "center"
   },
   count: {
     color: "#F00",
     height: 50,
     width: 100,
-    fontSize: 16
+    fontSize: 16,
+    textAlign: "center",
+    textAlignVertical: "center"
   }
 });
 

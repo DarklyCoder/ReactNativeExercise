@@ -7,10 +7,12 @@ const initialState = {
 function handleCount(state = initialState, action = {}) {
   switch (action.type) {
     case Types.TYPE_INCREASE:
-      return { ...state, count: state.count++ };
+      state.count++;
+      return { ...state };
 
     case Types.TYPE_DECREASE:
-      return { ...state, count: state.count-- };
+      state.count--;
+      return { ...state };
 
     default:
       return state;

@@ -4,4 +4,4 @@
 
 2. [Redux Demo](./ReactNativeReduxDemo)
 
-3. [Mbox Demo](./ReactNativeMboxDemo)
+3. [Mobx Demo](./ReactNativeMobxDemo)

@@ -1,15 +1,15 @@
 import { observable, action } from "mobx";
 
-class CountStore {
+export class CountStore {
   @observable count = 0;
 
   @action _increase = () => {
-    ++count;
+    ++this.count;
   };
 
   @action _decrease = () => {
-    --count;
+    --this.count;
   };
 }
 
-export default CountStore;
+export default new CountStore();

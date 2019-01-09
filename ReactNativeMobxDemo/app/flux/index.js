@@ -1,5 +1,5 @@
 import CountStore from "./CountStore";
 
-const countStore = new CountStore();
+const stores = { CountStore };
 
-export default { countStore };
+export default stores;

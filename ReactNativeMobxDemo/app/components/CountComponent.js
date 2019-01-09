@@ -1,12 +1,12 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 import { inject, observer } from "mobx-react/native";
 
-@inject(["countStore"])
+@inject("CountStore")
 @observer
-export default class CountComponent extends PureComponent {
+export default class CountComponent extends Component {
   render() {
-    const { count, _increase, _decrease } = this.props.countStore;
+    const { count, _increase, _decrease } = this.props.CountStore;
 
     return (
       <View style={styles.countContainer}>
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#CCC",
     color: "#333",
+
     fontSize: 16,
     textAlign: "center",
     textAlignVertical: "center"

@@ -2,7 +2,7 @@
 
 1. 安装 Redux
 
-   ```
+   ```shell
    npm i redux react-redux
    ```
 
@@ -16,14 +16,14 @@
 
    首先定义常量，在 `constants` 目录下新建 `actionTypes.js` 文件，内容如下：
 
-   ```
+   ```js
     export const TYPE_INCREASE = 'TYPE_INCREASE';
     export const TYPE_DECREASE = 'TYPE_DECREASE';
    ```
 
    接着在 `actions` 目录下新建 `countAction.js` 文件，内容如下：
 
-   ```
+   ```js
     import * as Types from "../constants/actionsTypes";
 
     export function increase() {
@@ -37,7 +37,7 @@
 
    然后在 `reducers` 目录下新建 `countReducer.js` 和 `index.js` 文件，代码如下：
 
-   ```
+   ```js
     import * as Types from "../constants/actionTypes";
 
     const initialState = {
@@ -63,7 +63,7 @@
 
    ```
 
-   ```
+   ```js
     import { combineReducers } from "redux";
 
     import countReducer from "./countReducer";
@@ -79,7 +79,7 @@
 
    接着在 `store` 目录下创建 `index.js` 文件，内容如下：
 
-   ```
+   ```js
     import { createStore } from "redux";
     import reducer from "../reducers";
 
@@ -92,7 +92,7 @@
 
    接着修改 `App.js` 文件，改动如下：
 
-   ```
+   ```jsx
     ......
     import { Provider } from "react-redux";
     import configureStore from "./redux/store";
@@ -114,7 +114,7 @@
 
    最后在 `React Native` 组件中使用，下面先创建一个 `CountComponent.js` 文件，内容如下：
 
-   ```
+   ```jsx
     import React, { PureComponent } from "react";
     import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 

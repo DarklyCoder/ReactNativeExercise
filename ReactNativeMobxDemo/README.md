@@ -2,25 +2,25 @@
 
 1. 安装 `Mobx`
 
-   ```
+   ```shell
    npm i mobx  mobx-react
    ```
 
 2. 安装 `babel` 插件，以支持 `ES7` 的 `decorator` 特性
 
-   ```
+   ```shell
    npm i babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev
    ```
 
 3. `react-native`从 `0.56` 版本开始默认支持 `bable7`，需要安装下面的 4 个 `babel` 库，之前的写法都不对了
 
-   ```
+   ```shell
    npm i @babel/core @babel/plugin-proposal-decorators @babel/plugin-transform-runtime @babel/runtime --save-dev
    ```
 
 4. 修改 `.babelrc`文件，完成这步就可以正常的使用装饰器了
 
-   ```
+   ```babelrc
    {
        "presets": ["module:metro-react-native-babel-preset"],
        "plugins": [
@@ -45,13 +45,13 @@
 
    首选项-->设置-->工作区设置，加入以下代码：
 
-   ```
+   ```json
    "javascript.implicitProjectConfig.experimentalDecorators": true
    ```
 
 6. 在 `Android` 设备上运行还需要安装 `jsc vm`:
 
-   ```
+   ```shell
    npm i jsc-android --save
    ```
 
@@ -59,7 +59,7 @@
 
    在 `android/build.gradle` 中修改如下：
 
-   ```
+   ```gradle
    allprojects {
     repositories {
         mavenLocal()
@@ -79,7 +79,7 @@
 
    在 `android/app/build.gradle` 中修改如下：
 
-   ```
+   ```gradle
     + configurations.all {
     +    resolutionStrategy {
     +        force 'org.webkit:android-jsc:r236355'
@@ -97,7 +97,7 @@
 
    `CountStore.js`
 
-   ```
+   ```js
    import { observable, action } from "mobx";
 
    class CountStore {
@@ -117,7 +117,7 @@
 
    `index.js`
 
-   ```
+   ```js
    import CountStore from "./CountStore";
 
    const stores = { CountStore };
@@ -129,7 +129,7 @@
 
    `CountComponent.js`
 
-   ```
+   ```jsx
    import React, { Component } from "react";
    import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
    import { inject, observer } from "mobx-react/native";
@@ -183,7 +183,7 @@
 
    最后修改 `App.js`:
 
-   ```
+   ```jsx
     import React, { Component } from "react";
     import { View } from "react-native";
     import CountComponent from "./components/CountComponent";
